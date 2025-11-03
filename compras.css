@@ -1,0 +1,482 @@
+    body {
+     font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      background: #f6f6f6;
+    }
+    @font-face {
+  font-family: 'MiFuente';
+  src: url('fonts/MiFuente.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+    html {
+  scroll-behavior: smooth;
+}
+
+    /* SLIDER */
+    .slider-container {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      background: #333;
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0; left: 0;
+      opacity: 0;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 1s;
+      animation: fadeSlider 24s infinite;
+    }
+    .slide:nth-child(1) {
+      background-image: url('https://tn.com.ar/resizer/v2/fiat-cronos-2023-foto-stellantis-JS5YCKFIN5AGZKOOCNUFWWTCNQ.jpg?auth=3cc5b1781a8ed8450d02668cdb709d5814e7d2955b40106704337e98ba08de60&width=767');
+      animation-delay: 0s;
+    }
+    .slide:nth-child(2) {
+      background-image: url('ttps://www.carsmagazine.com.ar/wp-content/uploads/2022/05/peugeot-208-style-argentina-2-e1652224158170.jpg');
+      animation-delay: 6s;
+    }
+    .slide:nth-child(3) {
+      background-image: url('https://cuyomotor.com.ar/wp-content/uploads/2023/05/honda-wave-2023-blanca.jpg');
+      animation-delay: 12s;
+    }
+    .slide:nth-child(4) {
+      background-image: url('https://delcar.com.uy/wp-content/uploads/2021/01/DSC9636-2-scaled.jpg');
+      animation-delay: 18s;
+    }
+    @keyframes fadeSlider {
+      0%   { opacity: 0;}
+      8%   { opacity: 1;}
+      25%  { opacity: 1;}
+      34%  { opacity: 0;}
+      100% { opacity: 0;}
+    }
+    /* Degradado inferior slider */
+    .slider-degrade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 130px;
+      background: linear-gradient(to top, #f6f6f6 0%, rgba(246,246,246,0.6) 35%, rgba(246,246,246,0) 100%);
+      z-index: 8;
+      pointer-events: none;
+    }
+    .slider-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      z-index: 10;
+      text-shadow: 0 3px 10px #222,0 0 2px #000;
+      pointer-events: none;
+    }
+    .slider-title {
+      font-size: 2.7rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+      pointer-events: all;
+    }
+    .motor-btn {
+      background: #d70007;
+      color: #fff;
+      padding: 11px 33px;
+      font-weight: 600;
+      border: none;
+      border-radius: 32px;
+      font-size: 1.18rem;
+      cursor: pointer;
+      margin: 0 auto;
+      margin-top: 22px;
+      box-shadow: 0 4px 30px #00000038;
+      pointer-events: all;
+      transition: background 0.18s;
+    }
+    .motor-btn:hover {
+      background: #222;
+      color: #fff;
+    }
+    /* TITULO BAJO SLIDER */
+    .main-title {
+      margin: 38px auto 22px auto;
+      text-align: center;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #d70007;
+      letter-spacing: 3px;
+      text-shadow: 0 2px 18px #d7000733;
+    }
+    /* CARTS GRID */
+    .cards-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 34px;
+      padding: 10px 16px 46px 16px;
+    }
+    /* CARD */
+    .card {
+      background: #fff;
+      border-radius: 19px;
+      box-shadow: 0 7px 30px #d7000735;
+      overflow: hidden;
+      transition: transform 0.28s cubic-bezier(.42,.37,.22,1.3), box-shadow 0.21s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 17px;
+      cursor: pointer;
+      position: relative;
+    }
+    .card:hover {
+      transform: scale(1.055);
+      box-shadow: 0 18px 45px #d7000755;
+      z-index: 2;
+    }
+    .card-img {
+      width: 92%;
+      height: 140px;
+      margin: 14px 0 16px 0;
+      object-fit: cover;
+      border-radius: 13px;
+      box-shadow: 0 2px 16px #d7000747;
+      transition: transform 0.28s cubic-bezier(.47,.6,.71,1.3);
+      cursor: pointer;
+    }
+    .card:hover .card-img, .card-img:hover {
+      transform: scale(1.19);
+      z-index: 3;
+      box-shadow: 0 12px 41px #d700079c;
+    }
+    .card-title {
+      font-size: 1.19rem;
+      font-weight: 700;
+      color: #222;
+      margin-bottom: 8px;
+    }
+    .card-price {
+      font-size: 1.08rem;
+      color: #d70007;
+      font-weight: 650;
+      margin-bottom: 15px;
+    }
+    .btn-comprar {
+      background: #d70007;
+      color: #fff;
+      border: none;
+      border-radius: 21px;
+      padding: 9px 32px;
+      font-size: 1.07rem;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 2px 14px #d7000725;
+      transition: background 0.18s;
+      margin-top: 6px;
+    }
+    .btn-comprar:hover {
+      background: #222;
+      color: #fff;
+    }
+    @media (max-width: 1000px) {
+      .cards-container { grid-template-columns: repeat(2,1fr);}
+      .slider-title { font-size: 1.55rem;}
+      .main-title { font-size: 1.35rem;}
+      .slider-container { height: 260px;}
+      .card-img { height: 90px;}
+    }
+    @media (max-width: 600px) {
+      .cards-container { grid-template-columns: 1fr;}
+      .card-img { height: 60vw;}
+      .slider-title { font-size: 1.2rem;}
+      .main-title { font-size: 1.07rem;}
+    }
+    /* Cartel Error */
+    .modal-error {
+      position: fixed;
+      left: 0; right:0; top: 0; bottom: 0;
+      background: rgba(22,22,22,0.33);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99;
+      font-family: inherit;
+    }
+    .modal-box {
+      background: #fff;
+      padding: 29px 36px;
+      border-radius: 15px;
+      box-shadow: 0 2px 30px #2226;
+      text-align: center;
+      font-size: 1.19rem;
+      color: #d70007;
+      font-weight: 700;
+    }
+    .modal-box button {
+      margin-top: 22px;
+      padding: 9px 32px;
+      font-size: 1.02rem;
+      background: #d70007;
+      color: #fff;
+      border: none;
+      border-radius: 13px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .modal-box button:hover {
+      background: #222;
+    }
+
+
+
+
+
+
+
+
+
+
+nav {
+      background: #f5f5f5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      height: 60px;
+    }
+    .nav-list {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-list li {
+      position: relative;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: #222;
+      font-size: 18px;
+      padding: 10px 12px;
+      transition: color 0.2s;
+    }
+    .nav-list a:hover {
+      color: #d70000;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 180px;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 18px;
+      color: #222;
+      font-size: 16px;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+    .dropdown-menu li:last-child a {
+      border-bottom: none;
+    }
+    .dropdown-menu li a:hover {
+      background: #d70007;
+      color: #fff;
+    }
+
+    .hamburger {
+      position: absolute;
+      right: 25px;
+      top: 13px;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      z-index: 101;
+    }
+    .bar {
+      height: 4px;
+      width: 100%;
+      background: #333;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 320px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: -2px 0 20px rgba(0,0,0,0.12);
+      transition: right 0.3s;
+      z-index: 200;
+      padding-top: 70px;
+    }
+    .side-menu.open {
+      right: 0;
+    }
+    .side-menu ul {
+      list-style: none;
+      padding: 0 0 0 20px;
+      margin: 0;
+    }
+    .side-menu li a {
+      display: block;
+      font-size: 17px;
+      color: #333;
+      padding: 15px 0;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s, color 0.2s;
+    }
+    .side-menu li a:hover {
+      background: #d70007;
+      color: #fff;
+    }
+    .side-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 32px;
+      color: #333;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 210;
+    }
+
+
+    @media (max-width: 800px) {
+      .nav-container {
+        gap: 16px;
+      }
+      .nav-list {
+        gap: 16px;
+      }
+      .side-menu {
+        width: 85vw;
+      }
+    }
+    @media (max-width: 500px) {
+      .nav-list a { font-size: 15px; padding: 7px 8px; }
+      .dropdown-menu li a { font-size: 14px; }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 38px 0 16px 0;
+  font-size: 17px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  color: #d70007;
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: #d70007;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+  filter: grayscale(40%);
+  transition: filter 0.2s;
+}
+.icon:hover {
+  filter: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 16px;
+  color: #aaa;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+}

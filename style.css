@@ -1,0 +1,424 @@
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    
+}
+body{
+   font-family: 'Montserrat', Arial, sans-serif;
+}
+@font-face {
+  font-family: 'MiFuente';
+  src: url('fonts/MiFuente.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+    @keyframes fade {
+      0% {opacity: 0;}
+      5% {opacity: 1;}
+      25% {opacity: 1;}
+      30% {opacity: 0;}
+      100% {opacity: 0;}
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      z-index: 10;
+    }
+
+    .overlay h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .overlay p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .overlay a {
+      text-decoration: none;
+      color: white;
+      background:  #d70007;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 5px;
+      transition: background 0.3s;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .overlay a:hover {
+      background: #830409;
+    }
+
+.degrade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* más alto para mayor efecto */
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,0.95) 30%,
+    rgba(255,255,255,0.8) 60%,
+    rgba(255,255,255,0.45) 80%,
+    rgba(255,255,255,0) 100%
+  );
+  z-index: 9;
+  pointer-events: none;
+}
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 500px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      animation: fade 16s infinite;
+    }
+
+
+
+    .slide:nth-child(1) {
+      background-image: url("https://tn.com.ar/resizer/v2/fiat-cronos-2023-foto-stellantis-JS5YCKFIN5AGZKOOCNUFWWTCNQ.jpg?auth=3cc5b1781a8ed8450d02668cdb709d5814e7d2955b40106704337e98ba08de60&width=767");
+      animation-delay: 0s;
+    }
+    .slide:nth-child(2) {
+      background-image: url("https://www.carsmagazine.com.ar/wp-content/uploads/2022/05/peugeot-208-style-argentina-2-e1652224158170.jpg");
+      animation-delay: 4s;
+    }
+    .slide:nth-child(3) {
+      background-image: url("https://cuyomotor.com.ar/wp-content/uploads/2023/05/honda-wave-2023-blanca.jpg");
+      animation-delay: 8s;
+    }
+    .slide:nth-child(4) {
+      background-image: url("https://delcar.com.uy/wp-content/uploads/2021/01/DSC9636-2-scaled.jpg");
+      animation-delay: 12s;
+    }
+
+.empresa-info {
+  max-width: 900px;
+  margin: 40px auto 30px auto; /* espacio arriba y abajo, centrado */
+  padding: 0 24px;
+  text-align: center;
+}
+
+.empresa-info p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+
+
+
+
+nav {
+      background: #f5f5f5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+      z-index: 100;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      position: relative;
+      height: 60px;
+    }
+    .nav-list {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .nav-list li {
+      position: relative;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: #222;
+      font-size: 18px;
+      padding: 10px 12px;
+      transition: color 0.2s;
+    }
+    .nav-list a:hover {
+      color: #d70000;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 180px;
+    }
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+    .dropdown-menu li a {
+      display: block;
+      padding: 12px 18px;
+      color: #222;
+      font-size: 16px;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+    .dropdown-menu li:last-child a {
+      border-bottom: none;
+    }
+    .dropdown-menu li a:hover {
+      background: #d70007;
+      color: #fff;
+    }
+
+    .hamburger {
+      position: absolute;
+      right: 25px;
+      top: 13px;
+      width: 34px;
+      height: 34px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 6px;
+      z-index: 101;
+    }
+    .bar {
+      height: 4px;
+      width: 100%;
+      background: #333;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -320px;
+      width: 320px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: -2px 0 20px rgba(0,0,0,0.12);
+      transition: right 0.3s;
+      z-index: 200;
+      padding-top: 70px;
+    }
+    .side-menu.open {
+      right: 0;
+    }
+    .side-menu ul {
+      list-style: none;
+      padding: 0 0 0 20px;
+      margin: 0;
+    }
+    .side-menu li a {
+      display: block;
+      font-size: 17px;
+      color: #333;
+      padding: 15px 0;
+      text-decoration: none;
+      border-bottom: 1px solid #eee;
+      transition: background 0.2s, color 0.2s;
+    }
+    .side-menu li a:hover {
+      background: #d70007;
+      color: #fff;
+    }
+    .side-close {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      font-size: 32px;
+      color: #333;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 210;
+    }
+
+
+    @media (max-width: 800px) {
+      .nav-container {
+        gap: 16px;
+      }
+      .nav-list {
+        gap: 16px;
+      }
+      .side-menu {
+        width: 85vw;
+      }
+    }
+    @media (max-width: 500px) {
+      .nav-list a { font-size: 15px; padding: 7px 8px; }
+      .dropdown-menu li a { font-size: 14px; }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.card {
+  border: 2px solid #830409;
+  border-radius: 10px;
+  padding: 16px 12px;
+  width: 280px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(.22,.61,.36,1), box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card img {
+  max-width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  transition: transform 0.3s cubic-bezier(.22,.61,.36,1);
+}
+
+/* ZOOM EFECTO AL HACER HOVER EN LA CARD */
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 32px rgba(131,4,9,0.15);
+  z-index: 2;
+}
+
+.card:hover img {
+  transform: scale(1.13);
+}
+
+#empresa-info2 {
+  max-width: 900px;
+  margin: 40px auto 30px auto; /* espacio arriba y abajo, centrado */
+  padding: 0 24px;
+  text-align: center;
+}
+
+#empresa-info2 p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  color: #222;
+}
+
+
+
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 38px 0 16px 0;
+  font-size: 17px;
+  margin-top: 40px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-section {
+  flex: 1 1 260px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  color: #d70007;
+  margin-bottom: 12px;
+  font-size: 21px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.footer-section a:hover {
+  color: #d70007;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  margin: 0 8px 0 0;
+  vertical-align: middle;
+  filter: grayscale(40%);
+  transition: filter 0.2s;
+}
+.icon:hover {
+  filter: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 16px;
+  color: #aaa;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+}

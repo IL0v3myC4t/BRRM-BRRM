@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consecionaria</title>
+    <link rel="stylesheet" href="compras.css">
+  <script src="compras.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<nav>
+  <div class="nav-container">
+    <ul class="nav-list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="info.html">Más Info</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="clientes.html">Clientes</a></li>
+      <li class="dropdown">
+        <a href="#">Más vendidos</a>
+        <ul class="dropdown-menu">
+          <li><a href="compras.html#fiat-cronos">Fiat Cronos</a></li>
+          <li><a href="compras.html#renault-kwid">Renault Kwid</a></li>
+          <li><a href="compras.html#fiat-mobi">Fiat Mobi</a></li>
+          <li><a href="compras.html#peugeot-208">Peugeot 208</a></li>
+          <li><a href="compras.html#chevrolet-onix">Chevrolet Onix</a></li>
+        </ul>
+      </li>
+    </ul>
+    <div class="hamburger" id="hamburgerBtn" title="Más productos">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
+  <div class="side-menu" id="sideMenu">
+    <button class="side-close" id="closeSideMenu" aria-label="Cerrar menú">&times;</button>
+    <ul>
+      <li><a href="compras.html#motomel-b110">Motomel B110</a></li>
+      <li><a href="compras.html#gilera-smash">Gilera Smash</a></li>
+      <li><a href="compras.html#corven-energy-110">Corven Energy 110</a></li>
+      <li><a href="compras.html#zanella-zb-110">Zanella ZB 110</a></li>
+      <li><a href="compras.html#mondial-ld-110-max">Mondial LD 110 Max</a></li>
+      <li><a href="compras.html#yamaha-ybr-125-z">Yamaha YBR 125 Z</a></li>
+      <li><a href="compras.html#bajaj-rouser-ns">Bajaj Rouser NS 125 / NS 160</a></li>
+      <li><a href="compras.html#renault-kwid">Renault Kwid</a></li>
+      <li><a href="compras.html#citroen-c3">Citroën C3</a></li>
+      <li><a href="compras.html#fiat-cronos">Fiat Cronos</a></li>
+      <li><a href="compras.html#peugeot-208">Peugeot 208</a></li>
+    </ul>
+  </div>
+</nav>
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <div class="slider-container">
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <audio id="audioMotor" src="imagenes/autos/car-engine-roaring-376881.mp3"></audio>
+    <div class="slider-degrade"></div>
+    <div class="slider-overlay">
+      <div class="slider-title">Compra Ya - Tu auto 0km está aquí</div>
+      <button class="motor-btn" id="btnMotor">Motor</button>
+    </div>
+  </div>
+
+  <div class="main-title">Escoge tu 0km</div>
+
+  <div class="cards-container" id="cardsContainer">
+
+  </div>
+
+  <div id="modalError" class="modal-error" style="display:none;">
+    <div class="modal-box">
+      <div>Error en la compra.<br>Consulte en la pestaña clientes.</div>
+      <button onclick="cerrarError()">Cerrar</button>
+    </div>
+  </div>
+
+
+   <footer class="footer" id="footer">
+  <div class="footer-content">
+    <div class="footer-section contact">
+      <h3>Contacto</h3>
+      <p><strong>Teléfono:</strong> <a href="tel:+5491123456789">+54 0 299 620 2763 </a></p>
+      <p><strong>Email:</strong> <a href="mailto:info@rutaceromotor.com">mail@rutaceromotor.com</a></p>
+      <p><strong>Dirección:</strong> R8324 Cipolletti, Río Negro, Argentina</p>
+    </div>
+    <div class="footer-section horario">
+      <h3>Horario</h3>
+      <p>Lunes a Viernes: 9:00 a 19:00</p>
+      <p>Sábados: 10:00 a 14:00</p>
+      <p>Domingos: Cerrado</p>
+    </div>
+    <div class="footer-section redes">
+      <h3>¡Seguinos!</h3>
+      <a href="#" title="Instagram"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="icon"></a>
+      <a href="#" title="Facebook"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="icon"></a>
+      <a href="#" title="WhatsApp"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="icon"></a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Ruta Cero Motor. Todos los derechos reservados.</p>
+  </div>
+</footer> 
+
+</body>
+</html>
