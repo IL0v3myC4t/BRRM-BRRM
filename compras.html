@@ -10,14 +10,13 @@
 </head>
 <body>
 
-
 <nav>
   <div class="nav-container">
     <ul class="nav-list">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="info.html">Más Info</a></li>
       <li><a href="contacto.html">Contacto</a></li>
-      <li><a href="clientes.html">Clientes</a></li>
+
       <li class="dropdown">
         <a href="#">Más vendidos</a>
         <ul class="dropdown-menu">
@@ -33,6 +32,12 @@
       <div class="bar"></div>
       <div class="bar"></div>
       <div class="bar"></div>
+    </div>
+
+
+    <div class="cart-btn" id="cartBtn" title="Ver carrito" aria-label="Ver carrito">
+      <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrito" />
+      <span id="cartCount" class="cart-count">0</span>
     </div>
   </div>
   <div class="side-menu" id="sideMenu">
@@ -85,10 +90,28 @@
 
   <div id="modalError" class="modal-error" style="display:none;">
     <div class="modal-box">
-      <div>Error en la compra.<br>Consulte en la pestaña clientes.</div>
+      <div id="modalErrorText">Error en la compra.<br>Consulte en la pestaña clientes.</div>
       <button onclick="cerrarError()">Cerrar</button>
     </div>
   </div>
+
+  
+  <aside id="cartSidebar" class="cart-sidebar" aria-hidden="true">
+    <header class="cart-header">
+      <h2>Tu carrito</h2>
+      <button id="closeCart" aria-label="Cerrar carrito">&times;</button>
+    </header>
+    <main class="cart-body">
+      <ul id="cartItemsList" class="cart-items"></ul>
+    </main>
+    <footer class="cart-footer">
+      <div class="cart-total">Total: <span id="cartTotal">$0</span></div>
+      <div class="cart-actions">
+        <button id="clearCartBtn" class="btn-secondary">Vaciar</button>
+        <button id="checkoutBtn" class="btn-primary">Comprar</button>
+      </div>
+    </footer>
+  </aside>
 
 
    <footer class="footer" id="footer">
@@ -116,6 +139,5 @@
     <p>&copy; 2025 Ruta Cero Motor. Todos los derechos reservados.</p>
   </div>
 </footer> 
-
 </body>
 </html>
